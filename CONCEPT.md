@@ -1,10 +1,10 @@
-# Rari Stable Pool: How it Works
+# Rari DAI Pool: How it Works
 
-This document explains how the Rari Stable Pool works under the hood. This content is also available [on our website](https://rari.capital/current.html).
+This document explains how the Rari DAI Pool works under the hood. This content is also available [on our website](https://rari.capital/current.html).
 
 ## Generating Yield
 
-Currently, the Rari Stable Pool generates yield by depositing a combination of:
+Currently, the Rari DAI Pool generates yield by depositing a combination of:
 
 * DAI and USDC to the lending protocol [dYdX](https://dydx.exchange/)
 * DAI, USDC, and USDT to the lending protocol [Compound](https://compound.finance/)
@@ -18,9 +18,9 @@ Rari optimizes yield not only by allocating assets to the pools with the highest
 
 In the near future, we will be generating yield from more currencies across more lending protocols, among other strategies.
 
-## RSPT (Rari Stable Pool Token)
+## RDPT (Rari DAI Pool Token)
 
-Each user's share of the Rari Stable Pool is represented by their RSPT (Rari Stable Pool Token) balance. When you deposit funds to the Stable Pool, an equivalent amount of RSPT is minted to your account. When you withdraw funds from the Stable Pool, the equivalent amount of RSPT is burned from your account. As soon as you deposit, you start earning yield. Essentially, Rari Stable Pool holdings and yield are split up across RSPT holders proportionally to their balances.
+Each user's share of the Rari DAI Pool is represented by their RDPT (Rari DAI Pool Token) balance. When you deposit funds to the DAI Pool, an equivalent amount of RDPT is minted to your account. When you withdraw funds from the DAI Pool, the equivalent amount of RDPT is burned from your account. As soon as you deposit, you start earning yield. Essentially, Rari DAI Pool holdings and yield are split up across RDPT holders proportionally to their balances.
 
 ## Deposits
 
@@ -30,17 +30,17 @@ See [`USAGE.md`](USAGE.md) for more information on how to deposit via the smart 
 
 ## Withdrawals
 
-Only the stablecoins currently held by the Rari Stable Pool are available for direct withdrawals. To withdraw another currency, you must exchange your funds after withdrawing. Fortunately, Rari can withdraw and exchange your funds in the same transaction via [0x](https://0x.org/) and/or [mStable](https://mstable.org) (please be aware that exchanges via 0x are subject to slippage due to price spread as well as an ETH protocol fee, and exchanges via mStable are subject to a small denominational percentage fee, but can avoid slippage and even get you a bonus).
+Only the stablecoins currently held by the Rari DAI Pool are available for direct withdrawals. To withdraw another currency, you must exchange your funds after withdrawing. Fortunately, Rari can withdraw and exchange your funds in the same transaction via [0x](https://0x.org/) and/or [mStable](https://mstable.org) (please be aware that exchanges via 0x are subject to slippage due to price spread as well as an ETH protocol fee, and exchanges via mStable are subject to a small denominational percentage fee, but can avoid slippage and even get you a bonus).
 
 See [`USAGE.md`](USAGE.md) for more information on how to withdraw via the smart contracts and [`API.md`](API.md) for a detailed reference on the smart contract methods involved. See the Rari SDK for easy implementation and the web client for easy usage.
 
 ## Structure
 
-The Rari Stable Pool is composed of 5 user-facing **smart contracts** in total (see [`DEPLOYED.md`](DEPLOYED.md) for deployed addresses):
+The Rari DAI Pool is composed of 5 user-facing **smart contracts** in total (see [`DEPLOYED.md`](DEPLOYED.md) for deployed addresses):
 
-* `RariFundManager` is the Rari Stable Pool's main contract, handling deposits, withdrawals, USD balances, interest, fees, etc.
+* `RariFundManager` is the Rari DAI Pool's main contract, handling deposits, withdrawals, USD balances, interest, fees, etc.
 * `RariFundController` holds supplied funds and is used by the rebalancer to deposit and withdraw from pools and make exchanges.
-* `RariFundToken` is the contract behind the Rari Stable Pool Token (RSPT), an ERC20 token used to internally account for the ownership of funds supplied to the Rari Stable Pool.
+* `RariFundToken` is the contract behind the Rari DAI Pool Token (RDPT), an ERC20 token used to internally account for the ownership of funds supplied to the Rari DAI Pool.
 * `RariFundPriceConsumer` retrieves stablecoin prices from Chainlink's public price feeds (used by `RariFundManager` and `RariFundController`).
 * `RariFundProxy` includes wrapper functions built on top of `RariFundManager`: exchange and deposit, withdraw and exchange, and deposit without paying gas via the Gas Station Network (GSN).
 
@@ -64,9 +64,9 @@ We have covered security above, but see [our website](https://rari.capital/risks
 
 See [this Notion article](https://www.notion.so/Fees-e4689d7b800f485098548dd9e9d0a69f) for more information about fees and where they go.
 
-* A *9.5% performance fee* is deducted from all interest earned by RSPT holders. This fee is liable to change in the future (but fees on past interest cannot be changed).
-* Furthermore, a *0.5% withdrawal fee* is deducted from all withdrawals from the Rari Stable Pool. This fee is also liable to change in the future.
+* A *9.5% performance fee* is deducted from all interest earned by RDPT holders. This fee is liable to change in the future (but fees on past interest cannot be changed).
+* Furthermore, a *0.5% withdrawal fee* is deducted from all withdrawals from the Rari DAI Pool. This fee is also liable to change in the future.
 
 ## COMP
 
-All [COMP (Compound's governance token)](https://compound.finance/governance/comp) earned by the fund is liquidated into additional interest for RSPT holders approximately every 3 days.
+All [COMP (Compound's governance token)](https://compound.finance/governance/comp) earned by the fund is liquidated into additional interest for RDPT holders approximately every 3 days.

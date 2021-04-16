@@ -27,7 +27,7 @@ import "./interfaces/IRariGovernanceTokenDistributor.sol";
 /**
  * @title RariFundManager
  * @author David Lucid <david@rari.capital> (https://github.com/davidlucid)
- * @notice This contract is the primary contract powering the Rari Stable Pool.
+ * @notice This contract is the primary contract powering the Rari DAI Pool.
  * Anyone can deposit to the fund with deposit(string currencyCode, uint256 amount).
  * Anyone can withdraw their funds (with interest) from the fund with withdraw(string currencyCode, uint256 amount).
  */
@@ -590,7 +590,7 @@ contract RariFundManager is Initializable, Ownable {
     event Withdrawal(string indexed currencyCode, address indexed sender, address indexed payee, uint256 amount, uint256 amountUsd, uint256 rftBurned, uint256 withdrawalFeeRate);
 
     /**
-     * @notice Deposits funds from `msg.sender` to the Rari Stable Pool in exchange for RFT minted to `to`.
+     * @notice Deposits funds from `msg.sender` to the Rari DAI Pool in exchange for RFT minted to `to`.
      * You may only deposit currencies accepted by the fund (see `isCurrencyAccepted(string currencyCode)`).
      * Please note that you must approve RariFundManager to transfer at least `amount`.
      * @param to The address that will receieve the minted RFT.
@@ -640,7 +640,7 @@ contract RariFundManager is Initializable, Ownable {
     }
 
     /**
-     * @notice Deposits funds to the Rari Stable Pool in exchange for RFT.
+     * @notice Deposits funds to the Rari DAI Pool in exchange for RFT.
      * You may only deposit currencies accepted by the fund (see `isCurrencyAccepted(string currencyCode)`).
      * Please note that you must approve RariFundManager to transfer at least `amount`.
      * @param currencyCode The currency code of the token to be deposited.
@@ -697,7 +697,7 @@ contract RariFundManager is Initializable, Ownable {
     }
 
     /**
-     * @dev Internal function to withdraw funds from the Rari Stable Pool to `msg.sender` in exchange for RFT burned from `from`.
+     * @dev Internal function to withdraw funds from the Rari DAI Pool to `msg.sender` in exchange for RFT burned from `from`.
      * You may only withdraw currencies held by the fund (see `getRawFundBalance(string currencyCode)`).
      * Please note that you must approve RariFundManager to burn of the necessary amount of RFT.
      * @param from The address from which RFT will be burned.
@@ -751,7 +751,7 @@ contract RariFundManager is Initializable, Ownable {
     }
 
     /**
-     * @notice Withdraws funds from the Rari Stable Pool in exchange for RFT.
+     * @notice Withdraws funds from the Rari DAI Pool in exchange for RFT.
      * You may only withdraw currencies held by the fund (see `getRawFundBalance(string currencyCode)`).
      * Please note that you must approve RariFundManager to burn of the necessary amount of RFT.
      * @param currencyCode The currency code of the token to be withdrawn.
@@ -763,7 +763,7 @@ contract RariFundManager is Initializable, Ownable {
     }
 
     /**
-     * @dev Withdraws multiple currencies from the Rari Stable Pool to `msg.sender` (RariFundProxy) in exchange for RFT burned from `from`.
+     * @dev Withdraws multiple currencies from the Rari DAI Pool to `msg.sender` (RariFundProxy) in exchange for RFT burned from `from`.
      * You may only withdraw currencies held by the fund (see `getRawFundBalance(string currencyCode)`).
      * Please note that you must approve RariFundManager to burn of the necessary amount of RFT.
      * @param from The address from which RFT will be burned.
