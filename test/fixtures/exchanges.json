@@ -12,9 +12,9 @@
         ["sUSD", "DAI"]
     ],
     "mStableExchangeCurrencies": [
-        "DAI",
+        "sUSD",
         "USDC",
-        "USDT",
-        "TUSD"
+        "DAI",
+        "USDT"
     ]
 }

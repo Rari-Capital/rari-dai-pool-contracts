@@ -120,14 +120,14 @@ See [this Notion article](https://www.notion.so/Fees-e4689d7b800f485098548dd9e9d
 
 ### Performance Fees
 
-Rari Capital currently takes a *9.5% performance fee* on all interest accrued by the Rari DAI Pool.
+Rari Capital currently takes a *17.5% performance fee* on all interest accrued by the Rari DAI Pool.
 
 * This fee is liable to change in the future, but the following method returns its current value at any time.
 * **Get interest fee rate:** `uint256 RariFundManager.getInterestFeeRate()` returns the fee rate on interest (proportion of raw interest accrued scaled by 1e18).
 
 ### Withdrawal Fees
 
-Rari Capital currently takes a *0.5% withdrawal fee* on all withdrawals from the Rari DAI Pool.
+The Rari DAI Pool does **NOT** take any withdrawal fees.
 
 * This fee is liable to change in the future, but the following method returns its current value at any time.
 * **Get withdrawal fee rate:** `uint256 RariFundManager.getWithdrawalFeeRate()` returns the withdrawal fee rate (proportion of every withdrawal taken as a service fee scaled by 1e18).
