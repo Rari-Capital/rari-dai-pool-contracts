@@ -8,13 +8,17 @@ As follows are all deployments of our smart contracts on the Ethereum mainnet. S
 
 `RariFundController` holds supplied funds and is used by the rebalancer to deposit and withdraw from pools and make exchanges.
 
-**v1.1.0**: (to be deployed)
+**v1.1.0**: `0xaFD2AaDE64E6Ea690173F6DE59Fc09F5C9190d74`
+
+Logic implementation contract: `0xb42bc0a99a176a16de9af1a490cae0c6832b43b8`
 
 ### `RariFundManager`
 
 `RariFundManager` is the Rari DAI Pool's main contract: it handles deposits, withdrawals, USD balances, interest, fees, etc.
 
 **v1.1.0**: `0xB465BAF04C087Ce3ed1C266F96CA43f4847D9635`
+
+Logic implementation contract: `0xAe6812D1227EEDcB48D8E75B9130d292Fe3675d8`
 
 ### `RariFundToken`
 
@@ -32,7 +36,7 @@ The Rari DAI Pool Token (RDPT) is an ERC20 token used to internally account for 
 
 `RariFundProxy` includes wrapper functions built on top of `RariFundManager`: exchange and deposit, withdraw and exchange, deposit without paying gas via the Gas Station Network (GSN).
 
-**v1.1.0**: (to be deployed)
+**v1.1.0**: `0x7C332FeA58056D1EF6aB2B2016ce4900773DC399`
 
 ## Older Versions
 

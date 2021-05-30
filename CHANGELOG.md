@@ -1,6 +1,6 @@
 # Changelog
 
-## `v1.1.0` (contracts not yet deployed; all code not yet pushed)
+## `v1.1.0` (contracts deployed 2021-05-30; all code pushed 2021-05-30)
 
 * Copy upgrades from Rari Stable Pool `v2.4.1` to `v2.6.0`:
     * Fuse integration!
