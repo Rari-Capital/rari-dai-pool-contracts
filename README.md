@@ -63,7 +63,7 @@ If you are upgrading from `v1.0.0`, set `UPGRADE_FROM_LAST_VERSION=1` to enable 
     UPGRADE_FUND_MANAGER_ADDRESS=0xB465BAF04C087Ce3ed1C266F96CA43f4847D9635
     UPGRADE_FUND_OWNER_ADDRESS=0x10dB6Bce3F2AE1589ec91A872213DAE59697967a
 
-You must also set `LIVE_UPGRADE_FUND_OWNER_PRIVATE_KEY` and `LIVE_UPGRADE_TIMESTAMP_COMP_CLAIMED` (set to current timestamp after claiming COMP awarded to the `RariFundController`; you should run migrations within 1 hour of this timestamp).
+You must also set `LIVE_UPGRADE_FUND_OWNER_PRIVATE_KEY`.
 
 Then, migrate: `truffle migrate --network live`
 

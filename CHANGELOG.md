@@ -5,6 +5,7 @@
 * Copy upgrades from Rari Stable Pool `v2.4.1` to `v2.6.0`:
     * Fuse integration!
     * Upgrade to mStable mUSD v3.
+    * Integrate swaps via Uniswap V2 in `RariFundController`.
     * Upgraded mStable SAVE V1 to V2 (and implemented MTA rewards).
     * Fixed bug in calculation of `outputFilledAmountUsd` in `RariFundController.marketSell0xOrdersFillOrKill`.
     * Check `fundDisabled` in `RariFundManager.upgradeFundController`.
